@@ -1,16 +1,14 @@
-[ -s ~/.iterm2_shell_integration.bash ] && . ~/.iterm2_shell_integration.bash
+[ -s ~/.iterm2_shell_integration.bash ] && \. ~/.iterm2_shell_integration.bash
 
-[ -s ~.profile ] && . ~/.profile
+[ -s ~/.profile ] && \. ~/.profile
 
-[ -s ~./bashrc ] && . ~/.bashrc
+[ -s ~./bashrc ] && \. ~/.bashrc
 
-[ -s $(brew --prefix)/etc/bash_completion ] && . $(brew --prefix)/etc/bash_completion
+[ -s $(brew --prefix)/etc/bash_completion ] && \. $(brew --prefix)/etc/bash_completion
 
-[ -s ~/.bash_aliases ] && . ~/.bash_aliases
+[ -s ~/.bash_aliases ] && \. ~/.bash_aliases
 
-[ -s ~/.oh-my-git/prompt.sh ] && . ~/.oh-my-git/prompt.sh
-
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
