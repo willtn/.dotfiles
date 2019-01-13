@@ -1,27 +1,18 @@
-test -e "~/.iterm2_shell_integration.bash" && . "~/.iterm2_shell_integration.bash"
+[ -s ~/.iterm2_shell_integration.bash ] && . ~/.iterm2_shell_integration.bash
 
-if [ -f ~.profile]; then
-  . ~/.profile
-fi
+[ -s ~.profile ] && . ~/.profile
 
-if [ -f ~.bashrc]; then
-  . ~/.bashrc
-fi
+[ -s ~./bashrc ] && . ~/.bashrc
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
+[ -s $(brew --prefix)/etc/bash_completion ] && . $(brew --prefix)/etc/bash_completion
 
-if [ -f $HOME/.bash_aliases ]; then
-  . $HOME/.bash_aliases
-fi
+[ -s ~/.bash_aliases ] && . ~/.bash_aliases
 
 [ -s ~/.oh-my-git/prompt.sh ] && . ~/.oh-my-git/prompt.sh
 
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 
 # Shell Auto-completion for Stack
 eval "$(stack --bash-completion-script stack)"
