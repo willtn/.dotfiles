@@ -8,3 +8,4 @@ ln -s -f .dotfiles/.bash_profile
 ln -s -f .dotfiles/.gitconfig
 ln -s -f .dotfiles/.gitignore_global
 ln -s -f .dotfiles/.profile
+ln -s -f .dotfiles/.git_prompt.sh
