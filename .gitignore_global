@@ -1,6 +1,8 @@
 *~
-.DS_Store
-.idea
-.vscode
-.ensime
-.ensime_cache
+.DS_Store/
+.idea/
+.vscode/
+.ensime/
+.ensime_cache/
+.metals/
+.bloop/
