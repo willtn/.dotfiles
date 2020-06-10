@@ -4,5 +4,6 @@
 [core]
 	editor = nvim
 	excludesfile = /Users/trungn/.gitignore_global
+	ignorecase = false
 [hub]
 	host = git.taservs.net

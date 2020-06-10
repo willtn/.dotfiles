@@ -6,3 +6,4 @@
 .ensime_cache/
 .metals/
 .bloop/
+ensime.sbt
