@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/trungn/.oh-my-zsh"
+export ZSH="/home/trungn/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -72,7 +72,6 @@ plugins=(
   git
   git-auto-fetch
   nvm
-  osx
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -89,20 +88,8 @@ source "$HOME/.dotfiles/.aliases"
 source "$NVM_DIR/nvm.sh"
 
 # Antigen
-source "$HOME/.antigen/antigen.zsh"
+source "$HOME/projects/antigen/antigen.zsh"
 
-# GHCUP
-. $HOME/.ghcup/env
-
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$GCP_DIR/path.zsh.inc" ]; then . "$GCP_DIR/path.zsh.inc"; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f "$GCP_DIR/completion.zsh.inc" ]; then . "$GCP_DIR/completion.zsh.inc"; fi
-
-# Nix
-# source "/Users/trungn/.nix-profile/etc/profile.d/nix.sh"
 
 antigen use oh-my-zsh
 antigen bundle arialdomartini/oh-my-git
