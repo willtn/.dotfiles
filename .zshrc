@@ -8,7 +8,7 @@ export ZSH="/home/trungn/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="theunraveler"
+#ZSH_THEME="theunraveler"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -63,20 +63,42 @@ ZSH_THEME="theunraveler"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+ZSH_AUTOSUGGEST_USE_ASYNC="true"
+
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-  git-auto-fetch
-  nvm
-)
+# plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+# Antigen
+source "$HOME/projects/antigen/antigen.zsh"
+
+antigen use oh-my-zsh
+antigen bundles <<EOBUNDLES
+  alexrochas/zsh-extract
+  alexrochas/zsh-git-semantic-commits
+  alexrochas/zsh-vim-crtl-z
+  command-not-found
+  copydir
+  copyfile
+  git
+  git-auto-fetch
+  jira
+  nvm
+  tmux
+  zsh-users/zsh-autosuggestions
+  zsh-users/zsh-completions
+  zsh-users/zsh-syntax-highlighting
+EOBUNDLES
+antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+
+antigen apply
 
 # Env
 source "$HOME/.dotfiles/.env"
@@ -87,17 +109,6 @@ source "$HOME/.dotfiles/.aliases"
 # Nvm
 source "$NVM_DIR/nvm.sh"
 
-# Antigen
-source "$HOME/projects/antigen/antigen.zsh"
-
-
-antigen use oh-my-zsh
-antigen bundle arialdomartini/oh-my-git
-# antigen theme arialdomartini/oh-my-git-themes oppa-lana-style
-# antigen theme arialdomartini/oh-my-git-themes arialdo-granzestyle
-antigen theme arialdomartini/oh-my-git-themes arialdo-pathinline
-
-antigen apply
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -121,3 +132,10 @@ antigen apply
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# zsh-autosuggestions
+bindkey '^ ' autosuggest-accept
+
+# Zsh-Vim-Crtl-Z
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
